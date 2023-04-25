@@ -1,6 +1,5 @@
 # Draft
 
-Sure, here is a 2000-word research paper with the following outline:
 
 **I. Introduction**
 
