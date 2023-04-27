@@ -3,7 +3,7 @@
 
 **I. Introduction**
 
-Data encryption is the process of converting data into a form that is unreadable to unauthorized users. This is done by scrambling the data using a secret key, which is known only to the authorized users. Hashing algorithms are a type of cryptographic primitive that are used to secure data. They are used to create a unique fingerprint of a piece of data, which can then be used to verify the integrity of the data or to authenticate the sender of a message.
+Data encryption is the process of converting data into a form that is unreadable to unauthorized users. This is done by scrambling the data using a secret key, which is known only to the authorized users. Hashing refers to the process of generating a fixed-size output from an input of variable size using the mathematical formulas known as hash functions. This technique determines an index or location for the storage of an item in a data structure (leet code). Hashing algorithms are a type of cryptographic primitive that are used to secure data. They are used to create a unique fingerprint of a piece of data, which can then be used to verify the integrity of the data or to authenticate the sender of a message.
 
 The main research question of this paper is: **How can hashing algorithms be used to enhance the security of data encryption?** The specific objectives of this paper are to:
 
