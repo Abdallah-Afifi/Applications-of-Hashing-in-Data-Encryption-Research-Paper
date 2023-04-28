@@ -32,7 +32,9 @@ V. Conclusion
 
 In conclusion, hashing algorithms have various applications in data encryption, providing data integrity and digital signature verification. However, they are not a replacement for encryption and should be used in conjunction with encryption to ensure confidentiality and data integrity. The strengths of hashing algorithms include computational efficiency and ease of implementation, while their weaknesses include the potential for collisions and lack of encryption.
 
-Choosing the appropriate hashing algorithm depends on the desired security guarantees and the specific application's requirements. The case study provided in this paper demonstrates the importance of selecting
+Choosing the appropriate hashing algorithm depends on the desired security guarantees and the specific application's requirements. The case study provided in this paper demonstrates the importance of selecting an appropriate hashing algorithm and considering factors such as security vulnerabilities and computational efficiency.
+
+In summary, hashing algorithms are a valuable tool for data encryption and can provide additional security benefits when used in conjunction with encryption. However, it is important to carefully evaluate their strengths and weaknesses and choose the appropriate algorithm for the desired application.
 
 
 
