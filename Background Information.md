@@ -55,7 +55,7 @@ The quadratic probing process works as follows:
 
 Quadratic probing improves upon linear probing by reducing primary clustering, but it can still suffer from a different form of clustering called secondary clustering. To further address clustering issues, alternative techniques such as double hashing can be employed.
 
-Double hashing
+
 Double hashing is a collision resolution technique used in open addressing-based hash tables. It offers a more effective way to find alternative locations for key-value pairs when collisions occur, reducing both primary and secondary clustering issues that can arise in linear and quadratic probing.
 
 In double hashing, two hash functions are used: the first one (h1) determines the initial index in the hash table, while the second one (h2) calculates the step size for probing. When a collision occurs, the algorithm combines these two hash functions to determine the next probe location.
