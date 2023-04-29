@@ -1,6 +1,7 @@
 # Terminal Output
 
 SHA-3 took 155 milliseconds to hash the input.
+
 MD5 took 0 milliseconds to hash the input.
 
 # Notes
