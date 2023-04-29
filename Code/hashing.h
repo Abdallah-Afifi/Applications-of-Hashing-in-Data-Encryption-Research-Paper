@@ -4,8 +4,13 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <crypto++/sha3.h>
+#include <crypto++/md5.h>
+#include <crypto++/hex.h>
+#include <crypto++/filters.h>
 
 using namespace std;
+using namespace CryptoPP;
 
 class Hashing {
 public:
@@ -19,13 +24,11 @@ public:
   SHA3Hashing() {}
   virtual ~SHA3Hashing() {}
   virtual string hash(const string &input) {
-    // SHA-3 hashing algorithm
-    // ...
+    SHA3_256 sha3;
+    string hashed_string;
+    StringSource(input, true, new HashFilter(sha3, new HexEncoder(new StringSink(hashed_string))));
     return hashed_string;
   }
-
-private:
-  string hashed_string;
 };
 
 class MD5Hashing : public Hashing {
@@ -33,13 +36,12 @@ public:
   MD5Hashing() {}
   virtual ~MD5Hashing() {}
   virtual string hash(const string &input) {
-    // MD5 hashing algorithm
-    // ...
+    MD5 md5;
+    string hashed_string;
+    StringSource(input, true, new HashFilter(md5, new HexEncoder(new StringSink(hashed_string))));
     return hashed_string;
   }
-
-private:
-  string hashed_string;
 };
 
 #endif // HASHING_H
+
