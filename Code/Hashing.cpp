@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <chrono>
 #include "hashing.h"
 
 using namespace std;
@@ -8,8 +9,15 @@ using namespace std;
 int main() {
   // Read input from text file
   ifstream input_file("input.txt");
-  string input;
-  getline(input_file, input);
+  if (!input_file.is_open()) {
+    cerr << "Error: input file not found!" << endl;
+    return 1;
+  }
+
+  string input, line;
+  while (getline(input_file, line)) {
+    input += line + "\n"; // append each line to the input string
+  }
 
   // Create SHA-3 and MD5 hashing objects
   SHA3Hashing sha3_hashing;
@@ -21,10 +29,15 @@ int main() {
 
   // Write the hashed output to text file
   ofstream output_file("output.txt");
+  if (!output_file.is_open()) {
+    cerr << "Error: output file cannot be created!" << endl;
+    return 1;
+  }
+
   output_file << "SHA-3 hash: " << sha3_hash << endl;
   output_file << "MD5 hash: " << md5_hash << endl;
 
-  // Compare the two algorithms based on the time it takes them to hash a sentence
+  // Compare the two algorithms based on the time it takes them to hash the input
   auto start = chrono::high_resolution_clock::now();
   sha3_hashing.hash(input);
   auto end = chrono::high_resolution_clock::now();
@@ -35,8 +48,8 @@ int main() {
   end = chrono::high_resolution_clock::now();
   auto md5_time = chrono::duration_cast<chrono::milliseconds>(end - start).count();
 
-  cout << "SHA-3 took " << sha3_time << " milliseconds to hash the sentence." << endl;
-  cout << "MD5 took " << md5_time << " milliseconds to hash the sentence." << endl;
+  cout << "SHA-3 took " << sha3_time << " milliseconds to hash the input." << endl;
+  cout << "MD5 took " << md5_time << " milliseconds to hash the input." << endl;
 
   return 0;
 }
